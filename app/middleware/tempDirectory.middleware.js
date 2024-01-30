@@ -12,7 +12,6 @@ const tempDirectory = (req, res, next) => {
         fs.mkdirSync(req.directory)
         
         res.on('finish', () => {
-            console.log("ok")
             fs.rm(req.directory, {recursive: true, force: true}, () => {})
         })
         next()

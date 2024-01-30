@@ -32,11 +32,13 @@ npm install
 
 Документация библиотеки: https://www.npmjs.com/package/wkhtmltopdf?activeTab=readme
 
-### .env переменные
+### .env окружение
 
 Создайте в корне проекта файл .development.env. Заполните его используя пример .example.env.
 
-В переменной WKHTMLTOPPDF_PATH_DRIVER, нужно указать полный путь к wkhtmltopdf в вашей системе. 
+В переменной WKHTMLTOPPDF_PATH_DRIVER, нужно указать полный путь к wkhtmltopdf в вашей системе.
+
+Создайте пустую папку в корне проекта и укажите её название в переменной STATIC_DIR
 
 ### Запуск
 
