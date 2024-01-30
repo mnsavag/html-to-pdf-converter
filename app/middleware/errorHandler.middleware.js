@@ -1,5 +1,5 @@
-import { HttpError } from "../utils/appError.utils.js"
 import { logger } from "../utils/loggers.utils.js"
+import { HttpError } from "../utils/appError.utils.js"
 
 
 export const errorHandler = (error, req, res, next) => {

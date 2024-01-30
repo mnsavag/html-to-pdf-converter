@@ -1,6 +1,6 @@
-import wkhtmltopdf from 'wkhtmltopdf';
 import fs from 'fs';
 import * as path from 'path';
+import wkhtmltopdf from 'wkhtmltopdf';
 
 import { HttpError } from '../utils/appError.utils.js';
 
