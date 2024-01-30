@@ -1,5 +1,5 @@
 import path from "path";
-import { AppError } from "../../utils/appError.utils.js"
+import { HttpError } from "../../utils/appError.utils.js"
 
 
 const fileExtLimiter = (allowedExtArray) => {
@@ -14,7 +14,7 @@ const fileExtLimiter = (allowedExtArray) => {
         const allowed = fileExtensions.every(ext => allowedExtArray.includes(ext))
         
         if (!allowed) {
-            throw new AppError('Bad Request', 404, `Allowed extensions: ${allowedExtArray.join(' ')}`)
+            throw new HttpError('Bad Request', 404, `Allowed extensions: ${allowedExtArray.join(' ')}`)
         }
 
         next()

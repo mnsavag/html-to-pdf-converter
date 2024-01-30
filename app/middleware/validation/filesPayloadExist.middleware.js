@@ -1,4 +1,4 @@
-import { AppError } from "../../utils/appError.utils.js"
+import { HttpError } from "../../utils/appError.utils.js"
 
 
 const filePayloadExist = (requiredFields) => {
@@ -9,7 +9,7 @@ const filePayloadExist = (requiredFields) => {
         }
 
         if (!allowed) {
-            throw new AppError('Bad Request', 404, `Allowed fields: ${requiredFields.join(' ')}`)
+            throw new HttpError('Bad Request', 404, `Allowed fields: ${requiredFields.join(' ')}`)
         }
         next()
     }

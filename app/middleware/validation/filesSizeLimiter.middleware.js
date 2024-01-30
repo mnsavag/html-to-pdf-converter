@@ -1,4 +1,4 @@
-import { AppError } from "../../utils/appError.utils.js"
+import { HttpError } from "../../utils/appError.utils.js"
 
 
 const GB = 2 // 2 GB
@@ -8,7 +8,7 @@ const filesSizeLimiter = (req, res, next) => {
     const files = req.files
     for (const fileName in files) {
         if (files[fileName].size > FILE_SIZE_LIMIT) {
-            throw new AppError('Bad Request', 404, `${files[fileName].name} size exceeds ${GB} gigabytes`)
+            throw new HttpError('Bad Request', 404, `${files[fileName].name} size exceeds ${GB} gigabytes`)
         }
     }
     next()

@@ -1,5 +1,5 @@
-const getURL = () => {
-    return `${process.env.PROTOCOL}://${process.env.DOMAIN}:${process.env.PORT}`
+const getURL = (protocol, domain, port) => {
+    return `${protocol}://${domain}:${port}`
 }
 
 export default getURL

@@ -1,5 +1,4 @@
 export class PerformanceMeasure {
-
     start(ramMeasureInterval) {
         this.start = performance.now()
         this.maxRAMConsumption = 0

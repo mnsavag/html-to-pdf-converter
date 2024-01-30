@@ -5,7 +5,7 @@ import router from './app/routes/app.routes.js';
 
 class Application {
     useMiddleware() {
-        this.app.use(express.static('public'))
+        this.app.use(express.static(process.env.STATIC_DIR))
         this.app.use(express.json())
         this.app.use('/api', router)
     }

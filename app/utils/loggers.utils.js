@@ -8,7 +8,7 @@ const logFormat = format.printf(({message, timestamp}) => {
 export const logger = createLogger({
     transports: [
         new transports.File({
-            level: 'info', // ???
+            level: 'info',
             filename: 'logs.log'
         })
     ],

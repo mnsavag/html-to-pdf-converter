@@ -1,5 +1,5 @@
 import { join, basename } from 'path';
-import { statSync, existsSync, readdirSync } from 'fs';
+import { statSync, readdirSync } from 'fs';
 
 
 const getFilePath = async (directory, fileName) => {

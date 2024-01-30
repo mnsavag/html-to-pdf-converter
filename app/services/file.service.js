@@ -1,16 +1,13 @@
-import * as path from 'path';
-import * as uuid from 'uuid';
 import * as fs from 'fs';
+import * as path from 'path';
 import StreamZip from 'node-stream-zip';
 
 
 class FileService {
-    async saveFile(file) {
+    async saveFile(file, dirPath) {
         try {
-            const dirName = uuid.v4()
-            const dirPath = path.resolve('public', dirName)
+            const dirName = path.dirname(dirPath)
             const filePath = path.resolve(dirPath, file.name)
-            
             await file.mv(filePath)
             return {
                 name: file.name,
@@ -19,7 +16,7 @@ class FileService {
                 absolutePath: filePath
             }
         } catch (e) {
-            console.log(e)
+            throw new Error(`${file.name} file save error`)
         }
     }
 
@@ -31,7 +28,7 @@ class FileService {
             fs.unlinkSync(filePath)
             await zip.close()
         } catch (error) {
-            console.log(error)
+            throw new Error(`${file.name} unzip file error`)
         }
     }
 }

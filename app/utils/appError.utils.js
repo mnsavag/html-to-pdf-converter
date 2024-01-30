@@ -1,12 +1,12 @@
-export class AppError extends Error {
+export class HttpError extends Error {
     constructor(name, status, description) {
-      super(description);
+      super(description)
   
-      Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+      Object.setPrototypeOf(this, new.target.prototype)
   
-      this.name = name;
-      this.status = status;
+      this.name = name
+      this.status = status
   
-      Error.captureStackTrace(this);
+      Error.captureStackTrace(this)
     }
 }
